@@ -54,7 +54,9 @@ class Figure: UIView {
         case .began:
             self.delegate?.removeGravityBehaviour(self)
         case .changed:
-            guard layer.bounds.width > 5 else {break}
+            if gesture.scale < 1.0 && layer.bounds.width <= 5 {
+                break
+            }
             let side = layer.bounds.width * gesture.scale
             if side <= UIScreen.main.bounds.width && side <= UIScreen.main.bounds.height && side > 0 {
                 layer.bounds = CGRect(x: layer.bounds.origin.x, y: layer.bounds.origin.y, width: side, height: side)
