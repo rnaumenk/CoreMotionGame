@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CoreMotionGame.xcscheme_^#shared#^_</key>
+		<key>d06.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>442BA33E21D3BCFC00A19106</key>
+		<key>61ACCFCA216DE0180069931A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

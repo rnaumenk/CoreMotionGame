@@ -1,9 +1,9 @@
 //
 //  Figure.swift
-//  CoreMotionGame
+//  d06
 //
-//  Created by Ruslan on 12/26/18.
-//  Copyright © 2018 Ruslan Naumenko. All rights reserved.
+//  Created by Ruslan NAUMENKO on 10/10/18.
+//  Copyright © 2018 Ruslan NAUMENKO. All rights reserved.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ import UIKit
 
 class Figure: UIView {
     
-    private var type : Int?
+    var type : Int?
     
     weak var delegate : DynamicsProtocol?
     
@@ -24,18 +24,20 @@ class Figure: UIView {
         }
         backgroundColor = UIColor.random
         
-        
+
         addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:))))
         addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(pinchGesture(_:))))
         addGestureRecognizer(UIRotationGestureRecognizer(target: self, action: #selector(rotationGesture(_:))))
         
+        //????
         clipsToBounds = true
+        layer.masksToBounds = true
         isUserInteractionEnabled = true
-        
+
     }
     
     override var collisionBoundsType: UIDynamicItemCollisionBoundsType {
-        if self.type == 0 {
+        if (self.type == 0) {
             return .rectangle
         } else {
             return .ellipse
@@ -52,17 +54,18 @@ class Figure: UIView {
         case .began:
             self.delegate?.removeGravityBehaviour(self)
         case .changed:
-            let side = frame.width * gesture.scale
+            guard layer.bounds.width > 5 else {break}
+            let side = layer.bounds.width * gesture.scale
             if side <= UIScreen.main.bounds.width && side <= UIScreen.main.bounds.height && side > 0 {
-                frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: side, height: side)
-                if frame.width > frame.height {
-                    frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.height, height: frame.height)
+                layer.bounds = CGRect(x: layer.bounds.origin.x, y: layer.bounds.origin.y, width: side, height: side)
+                if layer.bounds.width > layer.bounds.height {
+                    layer.bounds = CGRect(x: layer.bounds.origin.x, y: layer.bounds.origin.y, width: layer.bounds.height, height: layer.bounds.height)
                 }
-                else if frame.width < frame.height {
-                    frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.width, height: frame.width)
+                else if layer.bounds.width < layer.bounds.height {
+                    layer.bounds = CGRect(x: layer.bounds.origin.x, y: layer.bounds.origin.y, width: layer.bounds.width, height: layer.bounds.width)
                 }
                 if type == 1 {
-                    layer.cornerRadius = frame.width / 2
+                    layer.cornerRadius = layer.bounds.width / 2
                 }
                 self.delegate?.updateTheStateOfTheFigure(self)
             }
@@ -79,8 +82,8 @@ class Figure: UIView {
         case .began:
             self.delegate?.removeGravityBehaviour(self)
         case .changed:
-            center = gesture.location(in: superview)
-            self.delegate?.updateTheStateOfTheFigure(self)
+           center = gesture.location(in: superview)
+           self.delegate?.updateTheStateOfTheFigure(self)
         case .ended:
             self.delegate?.addGravityBehaviour(self)
         default:
@@ -117,4 +120,3 @@ extension UIColor {
                        alpha: 1.0)
     }
 }
-

@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  CoreMotionGame
+//  d06
 //
-//  Created by Ruslan on 12/26/18.
-//  Copyright © 2018 Ruslan Naumenko. All rights reserved.
+//  Created by Ruslan NAUMENKO on 10/10/18.
+//  Copyright © 2018 Ruslan NAUMENKO. All rights reserved.
 //
 
 import UIKit
@@ -11,14 +11,45 @@ import CoreMotion
 
 class ViewController: UIViewController, DynamicsProtocol {
     
-    private var figures : [Figure] = []
-    private var dynamicAnimator : UIDynamicAnimator!
-    private var gravityBehaviour : UIGravityBehavior!
-    private var collisionBehavior: UICollisionBehavior!
-    private var elasticityBehavior: UIDynamicItemBehavior!
-    private var motionManager: CMMotionManager!
+    var figures : [Figure] = []
+    var dynamicAnimator : UIDynamicAnimator!
+    var gravityBehaviour : UIGravityBehavior!
+    var collisionBehavior: UICollisionBehavior!
+    var elasticityBehavior: UIDynamicItemBehavior!
+    var motionManager: CMMotionManager!
     
     @IBOutlet weak var tapLabel: UILabel!
+    
+    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
+        
+        UIView.animate(withDuration: 1, delay: 0.0, options: .curveEaseOut, animations: {
+            self.tapLabel.alpha = 0.0
+        }, completion: nil)
+        
+        switch sender.state {
+        case .ended:
+            createNewFigure(sender.location(in: view))
+        default:
+            break
+        }
+        
+    }
+    
+    func removeGravityBehaviour(_ figure: Figure) {
+        gravityBehaviour.removeItem(figure)
+    }
+    
+    func updateTheStateOfTheFigure(_ figure: Figure) {
+        collisionBehavior.removeItem(figure)
+        elasticityBehavior.removeItem(figure)
+        dynamicAnimator.updateItem(usingCurrentState: figure)
+        collisionBehavior.addItem(figure)
+        elasticityBehavior.addItem(figure)
+    }
+    
+    func addGravityBehaviour(_ figure: Figure) {
+        gravityBehaviour.addItem(figure)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,22 +79,6 @@ class ViewController: UIViewController, DynamicsProtocol {
         }
     }
     
-    func removeGravityBehaviour(_ figure: Figure) {
-        gravityBehaviour.removeItem(figure)
-    }
-    
-    func updateTheStateOfTheFigure(_ figure: Figure) {
-        collisionBehavior.removeItem(figure)
-        elasticityBehavior.removeItem(figure)
-        dynamicAnimator.updateItem(usingCurrentState: figure)
-        collisionBehavior.addItem(figure)
-        elasticityBehavior.addItem(figure)
-    }
-    
-    func addGravityBehaviour(_ figure: Figure) {
-        gravityBehaviour.addItem(figure)
-    }
-    
     private func accelerometerHandler(data: CMAccelerometerData?, error: Error?) {
         
         if let myData = data {
@@ -74,7 +89,7 @@ class ViewController: UIViewController, DynamicsProtocol {
         }
     }
     
-    private func createNewFigure(_ point: CGPoint) {
+    func createNewFigure(_ point: CGPoint) {
         figures.append(Figure(point))
         figures.last!.delegate = self
         view.addSubview(figures.last!)
@@ -83,19 +98,5 @@ class ViewController: UIViewController, DynamicsProtocol {
         elasticityBehavior.addItem(figures.last!)
     }
     
-    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
-        
-        UIView.animate(withDuration: 1, delay: 0.0, options: .curveEaseOut, animations: {
-            self.tapLabel.alpha = 0.0
-        }, completion: nil)
-        
-        switch sender.state {
-        case .ended:
-            createNewFigure(sender.location(in: view))
-        default:
-            break
-        }
-        
-    }
-    
 }
+
