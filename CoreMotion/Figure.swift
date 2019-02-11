@@ -1,6 +1,6 @@
 //
 //  Figure.swift
-//  d06
+//  CoreMotionGame
 //
 //  Created by Ruslan NAUMENKO on 10/10/18.
 //  Copyright © 2018 Ruslan NAUMENKO. All rights reserved.
@@ -29,9 +29,7 @@ class Figure: UIView {
         addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(pinchGesture(_:))))
         addGestureRecognizer(UIRotationGestureRecognizer(target: self, action: #selector(rotationGesture(_:))))
         
-        //????
         clipsToBounds = true
-        layer.masksToBounds = true
         isUserInteractionEnabled = true
 
     }

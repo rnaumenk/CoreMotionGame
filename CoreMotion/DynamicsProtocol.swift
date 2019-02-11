@@ -1,6 +1,6 @@
 //
 //  DynamicsProtocol.swift
-//  d06
+//  CoreMotionGame
 //
 //  Created by Ruslan NAUMENKO on 10/10/18.
 //  Copyright © 2018 Ruslan NAUMENKO. All rights reserved.

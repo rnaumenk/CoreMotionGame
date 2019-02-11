@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		61ACCFCB216DE0180069931A /* d06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = d06.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		61ACCFCB216DE0180069931A /* CoreMotionGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreMotionGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61ACCFCE216DE0180069931A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61ACCFD0216DE0180069931A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		61ACCFD3216DE0180069931A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		61ACCFC2216DE0180069931A = {
 			isa = PBXGroup;
 			children = (
-				61ACCFCD216DE0180069931A /* d06 */,
+				61ACCFCD216DE0180069931A /* CoreMotion */,
 				61ACCFCC216DE0180069931A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		61ACCFCC216DE0180069931A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				61ACCFCB216DE0180069931A /* d06.app */,
+				61ACCFCB216DE0180069931A /* CoreMotionGame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		61ACCFCD216DE0180069931A /* d06 */ = {
+		61ACCFCD216DE0180069931A /* CoreMotion */ = {
 			isa = PBXGroup;
 			children = (
 				61ACCFE6216DE7B90069931A /* Figure.swift */,
@@ -67,15 +67,15 @@
 				61ACCFD7216DE0180069931A /* LaunchScreen.storyboard */,
 				61ACCFDA216DE0180069931A /* Info.plist */,
 			);
-			path = d06;
+			path = CoreMotion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		61ACCFCA216DE0180069931A /* d06 */ = {
+		61ACCFCA216DE0180069931A /* CoreMotionGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 61ACCFDD216DE0180069931A /* Build configuration list for PBXNativeTarget "d06" */;
+			buildConfigurationList = 61ACCFDD216DE0180069931A /* Build configuration list for PBXNativeTarget "CoreMotionGame" */;
 			buildPhases = (
 				61ACCFC7216DE0180069931A /* Sources */,
 				61ACCFC8216DE0180069931A /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = d06;
+			name = CoreMotionGame;
 			productName = d06;
-			productReference = 61ACCFCB216DE0180069931A /* d06.app */;
+			productReference = 61ACCFCB216DE0180069931A /* CoreMotionGame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -97,16 +97,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Ruslan NAUMENKO";
 				TargetAttributes = {
 					61ACCFCA216DE0180069931A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 61ACCFC6216DE0180069931A /* Build configuration list for PBXProject "d06" */;
+			buildConfigurationList = 61ACCFC6216DE0180069931A /* Build configuration list for PBXProject "CoreMotionGame" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				61ACCFCA216DE0180069931A /* d06 */,
+				61ACCFCA216DE0180069931A /* CoreMotionGame */,
 			);
 		};
 /* End PBXProject section */
@@ -185,6 +186,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -192,6 +194,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -242,6 +245,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -249,6 +253,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -283,11 +288,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = d06/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CoreMotion/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rnaumenk.d06;
+				PRODUCT_BUNDLE_IDENTIFIER = rnaumenk.CoreMotionGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -297,11 +302,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = d06/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CoreMotion/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rnaumenk.d06;
+				PRODUCT_BUNDLE_IDENTIFIER = rnaumenk.CoreMotionGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -309,7 +314,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		61ACCFC6216DE0180069931A /* Build configuration list for PBXProject "d06" */ = {
+		61ACCFC6216DE0180069931A /* Build configuration list for PBXProject "CoreMotionGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61ACCFDB216DE0180069931A /* Debug */,
@@ -318,7 +323,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		61ACCFDD216DE0180069931A /* Build configuration list for PBXNativeTarget "d06" */ = {
+		61ACCFDD216DE0180069931A /* Build configuration list for PBXNativeTarget "CoreMotionGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				61ACCFDE216DE0180069931A /* Debug */,
